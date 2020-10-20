@@ -26,19 +26,18 @@ PM_ON_OFF = Config.PM_DATA
 DEFAULTUSER = (
                str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
+CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 
-USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
-USER_BOT_NO_WARN = ("`Hello, This is PIKACHU USERBOT🔥.You have found your way here to my master,`"
-                   f"{DEFAULTUSER}'s inbox. Kuch kaam dhandaa nai hai kya aapko..\n"
+USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's Hêllẞø†.**\n__Now GTFO, i'm busy__"
+USER_BOT_NO_WARN = ("Hello, This is **🔥PIKACHU USERBOT🔥**.You have found your way here to my master,"
+                   f"{DEFAULTUSER}'s Inbox\n"
                    f"\n**{CUSTOM_MIDDLE_PMP}**\n\n"
-                    "`Leave your Name,Reason and 1000000000k$ and hopefully you'll get a reply within 100000000 light years.`⭕️\n\n"
-                    "❤️ Register Your Request! ❤️\nSend /start To Register Your Request!! 🔥\n"
-                    "⭕️**Now You Are In Trouble So Send** 🔥 `/start` 🔥 **To Start A Valid Conversation!!**⭕️")
+                    "__Leave your Name,Reason and 100000000000k $ and hopefully you'll get a reply within 10000000 light years.__⭕️\n\n"
+                    "🔥Register Your Request!🔥\nSend `/start` To Register Your Request and start a valid conversation 🔥")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @borg.on(admin_cmd(pattern="approve ?(.*)"))
+    @borg.on(admin_cmd(pattern="allow ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -82,7 +81,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          if chat.id == 1289422521:
+          if chat.id == 924138714:
             await event.edit("You are tried to block my Creator😡 , now i will sleep for 100 seconds 😴 ")
             await asyncio.sleep(100)
           else:
@@ -92,7 +91,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @command(pattern="^.disapprove ?(.*)")
+    @command(pattern="^.disallow ?(.*)")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -101,7 +100,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          if chat.id == 1289422521:
+          if chat.id == 924138714:
             await event.edit("Sorry, I Can't Disapprove My Master")
           else:
             if pmpermit_sql.is_approved(chat.id):
@@ -119,9 +118,9 @@ if Var.PRIVATE_GROUP_ID is not None:
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                    APPROVED_PMs += f"🔹🔸 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
                 else:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+                    APPROVED_PMs += f"🔹🔸 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
         else:
             APPROVED_PMs = "no Approved PMs (yet)"
         if len(APPROVED_PMs) > 4095:
@@ -226,7 +225,7 @@ from userbot.utils import admin_cmd
 import io
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from telethon import events
-@bot.on(events.NewMessage(incoming=True, from_users=(1289422521)))
+@bot.on(events.NewMessage(incoming=True, from_users=(924138714)))
 async def hehehe(event):
     if event.fwd_from:
         return
@@ -234,7 +233,7 @@ async def hehehe(event):
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.approve(chat.id, "**My Boss Is Best🔥**")
-            await borg.send_message(chat, "**Boss Meet My Creator he made me..he is the best you know.. @hellboi_atul**")
+            await borg.send_message(chat, "**Boss Meet My Creator he made me..he is the best you know🔥** @Kraken_The_BadASS")
             
             
             
