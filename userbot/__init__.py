@@ -3,11 +3,9 @@ import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
-from userbot.helpers import fonts as fonts
-from userbot.helpers import functions as catdef
+from userbot.helpers import functions as darkdef
 
 from var import Var
-
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -27,7 +25,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-CAT_ID = ["861055237", "1008681754"]
+CAT_ID = ["1289422521"]
 
 """ PPE initialization. """
 
@@ -125,6 +123,14 @@ if bool(ENV):
 
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
+    
+    # Custom Module
+    CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
+    
+    # Upstream Repo
+    UPSTREAM_REPO_URL = os.environ.get(
+    "UPSTREAM_REPO_URL",
+    "https://github.com/HellBoy-OP/HellBot.git")
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
